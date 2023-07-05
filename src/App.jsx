@@ -9,7 +9,7 @@ function App() {
   const [notes, setNotes] = useState([]);
   return (
     <div className="container">
-      <NoteHeader  />
+      <NoteHeader notes={notes} />
       <div className="note-app">
         <AddNewNote setNotes={setNotes} />
         <div className="note-container">

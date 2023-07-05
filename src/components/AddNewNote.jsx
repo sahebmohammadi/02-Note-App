@@ -6,7 +6,13 @@ function AddNewNote({ setNotes }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newNote = { title, description, id: Date.now(), completed: false };
+    const newNote = {
+      title,
+      description,
+      id: Date.now(),
+      completed: false,
+      createdAt: new Date().toISOString(),
+    };
     setNotes((notes) => [...notes, newNote]);
     setTtile("");
     setDescription("");

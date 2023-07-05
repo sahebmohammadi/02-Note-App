@@ -5,7 +5,7 @@ function NoteList({ notes }) {
         <NoteItem key={i} />
       ))} */}
       {notes.map((note) => (
-        <NoteItem key={note.id} />
+        <NoteItem key={note.id} note={note} />
       ))}
     </div>
   );
@@ -13,17 +13,25 @@ function NoteList({ notes }) {
 
 export default NoteList;
 
-function NoteItem() {
+function NoteItem({ note }) {
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+
   return (
     <div className="note-item">
       <div className="note-item__header">
         <div>
-          <p className="title">client review and feedback</p>
-          <p className="desc">crypto wallet redeisgn</p>
+          <p className="title">{note.title}</p>
+          <p className="desc">{note.description}</p>
         </div>
-        <input style={{ backgroundColor: "#fff" }} type="checkbox" name="" />
+        <input type="checkbox" name="" />
       </div>
-      <p className="note-item__footer">Today : 10:00 PM</p>
+      <p className="note-item__footer">
+        {new Date(note.createdAt).toLocaleDateString("en-US", options)}
+      </p>
     </div>
   );
 }

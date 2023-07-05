@@ -1,7 +1,7 @@
-function NoteHeader() {
+function NoteHeader({ notes }) {
   return (
     <div className="note-header">
-      <h1>My Notes (8)</h1>
+      <h1>My Notes ({notes.length})</h1>
       <select name="" id="" placeholder="sort based on ...">
         <option value="date">Sort based on Date</option>
         <option value="completed">Sort based on Completed</option>
