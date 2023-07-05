@@ -1,15 +1,21 @@
+function NoteStatus({ notes }) {
+  const allNotes = notes.length;
+  const completedNotes = notes.filter((n) => n.completed).length;
+  const unCompletedNotes = allNotes - completedNotes;
 
-function NoteStatus() {
+  if (!allNotes)
+    return <h2>No Notes has already been added !</h2>;
+
   return (
     <ul className="note-status">
       <li>
-        All <span>10</span>
+        All <span>{allNotes}</span>
       </li>
       <li>
-        Completed <span>7</span>
+        Completed <span>{completedNotes}</span>
       </li>
       <li>
-        Open <span>3</span>
+        Open <span>{unCompletedNotes}</span>
       </li>
     </ul>
   );

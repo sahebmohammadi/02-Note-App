@@ -9,6 +9,7 @@
   --primary-700: #4338ca;
   --primary-600: #4f46e5;
   --primary-100: #e0e7ff;
+  --rose-500: #f43f5e;
 }
 
 * {
@@ -48,8 +49,16 @@ h2 {
   margin-bottom: 1.5rem;
   color: var(--text-700);
 }
+
 input[type="checkbox"] {
   transform: scale(1.5);
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
 }
 
 select {

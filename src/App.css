@@ -68,6 +68,10 @@
   text-decoration: line-through;
 }
 
+.note-item.completed {
+  opacity: 80%;
+}
+
 .note-item__header .title {
   font-size: 1.1rem;
   color: var(--text-700);
@@ -79,6 +83,19 @@
   color: var(--text-400);
   margin-bottom: 0.5rem;
   font-weight: 300;
+}
+
+.note-item__header .actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.note-item__header .trash {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--rose-500);
+  background: none;
 }
 
 .note-item__footer {
