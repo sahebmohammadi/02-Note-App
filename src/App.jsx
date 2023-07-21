@@ -16,13 +16,31 @@ function App() {
     setNotes((prevNotes) => prevNotes.filter((n) => n.id !== id));
   };
 
+  const handleCompleteNote = (e) => {
+    const noteId = Number(e.target.value);
+    // const newNotes = notes.map((note) =>
+    //   note.id === noteId ? { ...note, completed: !note.completed } : note
+    // );
+    // setNotes(newNotes);
+
+    setNotes((prevNotes) =>
+      prevNotes.map((note) =>
+        note.id === noteId ? { ...note, completed: !note.completed } : note
+      )
+    );
+  };
+
   return (
     <div className="container">
       <div className="note-header">note header</div>
       <div className="note-app">
         <AddNewNote onAddNote={hanldeAddNote} />
         <div className="note-container">
-          <NoteList notes={notes} onDelete={handleDeleteNote} />
+          <NoteList
+            notes={notes}
+            onDelete={handleDeleteNote}
+            onComplete={handleCompleteNote}
+          />
         </div>
       </div>
     </div>
