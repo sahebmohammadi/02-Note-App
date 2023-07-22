@@ -1,9 +1,10 @@
 function NoteStatus({ notes }) {
-  const allNotes = notes.length; 
+  // dervied state :
+  const allNotes = notes.length;
   const completedNotes = notes.filter((n) => n.completed).length;
   const unCompletedNotes = allNotes - completedNotes;
 
-  if (!allNotes) return <h2>No notes has already been added.</h2>;
+  if (!allNotes) return <h2>No Notes has already been added.</h2>;
 
   return (
     <ul className="note-status">
